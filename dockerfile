@@ -4,8 +4,6 @@ RUN mkdir -p /app
 WORKDIR /go/src/build_bd
 
 COPY . .
-RUN apk add --no-cache ca-certificates git
-RUN go mod download
 
 WORKDIR /go/src/build_bd/cmd
 RUN GOOS=linux GOARCH=amd64 go build -o bd
